@@ -13,10 +13,11 @@ const messages = {
   INCORRECT_USER_OR_PASS: 'Incorrect user or password',
   NOT_FOUND: 'Not found',
   ONLY_ADM: 'Only an administrator may to register a new user',
-  USER_CREATED: 'User registered successfully',
+  TASK_CREATED: 'Task created successfully',
   USER_EXISTS: 'User is already registered',
   VOID_TOKEN: 'Token not found',
   VOID_USER: 'User not found',
+  NOT_CREATED: 'Task not created',
 };
 
 module.exports = { status, messages };
