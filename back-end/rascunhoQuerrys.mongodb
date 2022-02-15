@@ -1,0 +1,8 @@
+use('todoList')
+db.task.insertOne({ task: 'enviar o desafio'});
+
+use('todoList')
+db.task.deleteMany({})
+
+use('todoList')
+db.task.find({});

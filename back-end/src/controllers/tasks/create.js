@@ -6,6 +6,8 @@ const create = async (req, res, next) => {
     const { task } = req.body;
 
     const resultFromServices = await createFromServices(task);
+    const { id } = resultFromServices;
+    req.id = { ...req.id, id };
 
     if (resultFromServices.code) return next(resultFromServices);
 

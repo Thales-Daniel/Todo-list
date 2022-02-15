@@ -1,1 +1,3 @@
-module.exports = (code, message) => ({ code, message });
+const response = (code, message) => ({ code, message });
+
+module.exports = response;
