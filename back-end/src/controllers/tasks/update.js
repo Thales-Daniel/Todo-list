@@ -3,9 +3,9 @@ const { status } = require('../../helpers/messagesAndStatus');
 
 const create = async (req, res, next) => {
   try {
-    const { oldTask, newTask } = req.body;
+    const { id, newTask } = req.body;
 
-    const resultFromServices = await updateFromServices({ oldTask, newTask });
+    const resultFromServices = await updateFromServices({ id, newTask });
     req.userInfor = resultFromServices;
 
     if (resultFromServices.code) return next(resultFromServices);
