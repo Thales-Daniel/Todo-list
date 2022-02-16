@@ -1,9 +1,9 @@
 const { ObjectId } = require('mongodb');
 const connection = require('../connection');
 
-const deleteModel = async (id) => (await connection())
-  .collection('recipes').deleteOne(
+const deleteTask = async (id) => (await connection())
+  .collection('task').deleteOne(
     { _id: ObjectId(id) },
   );
 
-module.exports = deleteModel;
+module.exports = deleteTask;
