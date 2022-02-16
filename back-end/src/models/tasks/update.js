@@ -5,7 +5,7 @@ const dataFunc = require('../../helpers/date');
 const updateTask = async (id, newTask) => {
   const connections = await connection();
   const result = (await connections).collection('task').findOneAndUpdate(
-    { task: ObjectId(id) },
+    { _id: ObjectId(id) },
     { $set: { task: newTask, date: dataFunc } },
     { returnOriginal: true },
   );
