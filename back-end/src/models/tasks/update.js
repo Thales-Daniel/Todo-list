@@ -1,20 +1,15 @@
 const connection = require('../connection');
+const dataFunc = require('../../helpers/date');
 
 const updateTask = async (oldTask, newTask) => {
   const connections = await connection();
   const result = (await connections).collection('task').findOneAndUpdate(
     { task: oldTask },
-    { $set: { newTask } },
-    { returnOriginal: false },
+    { $set: { task: newTask, date: dataFunc } },
+    { returnOriginal: true },
   );
-  return result;
+  const retorno = await result;
+  return { ...retorno.value, newTask };
 };
-
-const teste = async () => {
-  const result = await updateTask('fazer exercicios', 'fazer um app');
-  console.log(result);
-};
-
-teste();
 
 module.exports = updateTask;

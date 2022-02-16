@@ -1,13 +1,5 @@
-const dataFunc = (date) => {
-  const mo = new Intl.DateTimeFormat('pt-br', {
-    dateStyle: 'short',
-    hour12: 'true',
-    timeStyle: 'medium',
-  }).format(date);
-  const correctDate = mo.split('/').join('-');
-  return correctDate;
-};
+const { format } = require('date-fns');
 
-console.log(dataFunc());
+const timestamp = format(new Date(), 'dd-MM-yyy HH:mm:ss');
 
-module.exports = dataFunc;
+module.exports = timestamp;
