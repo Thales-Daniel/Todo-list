@@ -1,5 +1,8 @@
 use('todoList')
-db.task.insertOne({ task: 'enviar o desafio'});
+db.task.insertOne({
+    task: "fazer COISAS",
+    date: "16-02-2022 15:54:24"
+  })
 
 use('todoList')
 db.task.deleteMany({})
