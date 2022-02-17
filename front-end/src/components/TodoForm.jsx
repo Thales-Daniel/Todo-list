@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import createTask from '../services/create';
 
 function TodoForm() {
   const [input, setInput] = useState('');
@@ -13,6 +14,10 @@ function TodoForm() {
     setInput('');
   };
 
+  const handleClick = async () => {
+    await createTask(input);
+  };
+
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <input
@@ -23,7 +28,7 @@ function TodoForm() {
         className="todo-input"
         onChange={handleChange}
       />
-      <button type="submit" className="todo-button">
+      <button type="submit" className="todo-button" onClick={handleClick}>
         Add todo
       </button>
 
