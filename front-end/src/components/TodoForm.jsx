@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import createTask from '../services/create';
+import '../css/todoForm.css';
 
 function TodoForm() {
   const [input, setInput] = useState('');
@@ -28,7 +29,7 @@ function TodoForm() {
         className="todo-input"
         onChange={handleChange}
       />
-      <button type="submit" className="todo-button" onClick={handleClick}>
+      <button type="submit" disabled={!input.length} className="todo-button" onClick={handleClick}>
         Add todo
       </button>
 

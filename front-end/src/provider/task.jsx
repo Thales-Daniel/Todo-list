@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import getAll from '../services/getAll';
@@ -18,7 +19,6 @@ export function TaskProvider({ children }) {
   };
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <TaskContext.Provider value={{ task, setTask, deleteTodo }}>
       {children}
     </TaskContext.Provider>
