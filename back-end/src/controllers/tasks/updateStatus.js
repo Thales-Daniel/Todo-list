@@ -1,11 +1,11 @@
-const updateFromServices = require('../../services/tasks/update');
+const updateStatusFromServices = require('../../services/tasks/updateStatus');
 const { status } = require('../../helpers/messagesAndStatus');
 
 const create = async (req, res, next) => {
   try {
-    const { id, newTask } = req.body;
+    const { id, newStatus } = req.body;
 
-    const resultFromServices = await updateFromServices({ id, newTask });
+    const resultFromServices = await updateStatusFromServices({ id, newStatus });
 
     if (resultFromServices.code) return next(resultFromServices);
 
